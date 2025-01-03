@@ -15,8 +15,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>8</maven.compiler.source>
-    <maven.compiler.target>8</maven.compiler.target>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
   </properties>
 
   <dependencies>
@@ -26,6 +26,34 @@
       <version>4.13.1</version>
       <scope>test</scope>
     </dependency>
+    
+    <dependency> 
+		<groupId>jakarta.faces</groupId> 
+		<artifactId>jakarta.faces-api</artifactId> 
+		<version>3.0.0</version> 
+		<scope>provided</scope> 
+	</dependency> 
+	
+	<dependency> 
+		<groupId>org.glassfish</groupId> 
+		<artifactId>jakarta.faces</artifactId> 
+		<version>3.0.0</version> 
+	</dependency>
+    
+    <!-- https://mvnrepository.com/artifact/com.sun.faces/jsf-api -->
+	<!-- <dependency>
+	    <groupId>com.sun.faces</groupId>
+	    <artifactId>jsf-api</artifactId>
+	    <version>2.2.20</version>
+	</dependency>
+	
+	 https://mvnrepository.com/artifact/com.sun.faces/jsf-impl -->
+	<!-- <dependency>
+	    <groupId>com.sun.faces</groupId>
+	    <artifactId>jsf-impl</artifactId>
+	    <version>2.2.20</version>
+	</dependency>-->
+
   </dependencies>
 
   <build>
@@ -61,6 +89,16 @@
           <artifactId>maven-deploy-plugin</artifactId>
           <version>3.1.2</version>
         </plugin>
+        <plugin> 
+			<groupId>org.apache.tomcat.maven</groupId> 
+			<artifactId>tomcat9-maven-plugin</artifactId> 
+			<version>2.2</version> 
+			<configuration> 
+				<path>/project-jsf</path> 
+				<port>8080</port> <!-- Cambia a tu puerto deseado --> 
+				<server>Tomcat 10 Server</server> 
+				</configuration> 
+		</plugin>
       </plugins>
     </pluginManagement>
   </build>
